@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: json-20180813.jar okhttp-4.0.0-alpha01.jar
+Main-Class: neurones.java.fr.Launcher
+
