@@ -5,6 +5,7 @@ This program allow you to get the **alerts**, the **RAM**, the **CPU**, the **di
 ## Requirements
 
  * Java
+ * MySQL (with a database named **PCC**)
 
 ## How to use it
 
