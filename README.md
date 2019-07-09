@@ -9,6 +9,7 @@ This program allow you to get the **alerts**, the **RAM**, the **CPU**, the **di
 
 ## How to use it
 
+Take the artifact idc.jar in out/artifacts/
 To execute it just use this command line
 ```shell
   java -jar idc.jar
