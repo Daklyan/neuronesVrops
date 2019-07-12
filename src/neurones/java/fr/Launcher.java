@@ -85,6 +85,9 @@ public class Launcher {
                             TOP = 20;
                         }
                         break;
+                    case "-r": //remove
+                        deletePcc();
+                        return;
                     case "--version":
                         System.out.println("1.0");
                         return;
@@ -363,6 +366,38 @@ public class Launcher {
                 stmnt.close();
             }
         } catch (SQLException err) {
+            System.err.println(err.getCause() + " : " + err.getMessage());
+        }
+    }
+
+    /**
+     * Remove a PCC from login.json
+     */
+    public static void deletePcc() {
+        int i;
+        int res;
+        System.out.println("Which one do you want to delete? (-1 to cancel)");
+        JSONObject object = new JSONObject(readFile(PATH));
+        JSONArray pccs = object.getJSONArray("pccs");
+        for (i = 0; i < pccs.length(); i++) { //List all the PCC saved
+            JSONObject pcc = pccs.getJSONObject(i);
+            System.out.println(i + 1 + "- " + pcc.getString("url"));
+        }
+        try {
+            res = Integer.parseInt(scanf());
+            if (res == -1) {
+                System.out.println("Operation canceled");
+            } else if (res > pccs.length() || res < -1 || res == 0) {
+                System.err.println("Not a valid number");
+            } else {
+                pccs.remove(res - 1);
+                new File(PATH).delete();
+                Files.write(Paths.get(PATH), object.toString().getBytes(), StandardOpenOption.CREATE);
+                System.out.println("Object removed!");
+            }
+        } catch (NumberFormatException err) {
+            System.err.println("Not a valid number");
+        } catch (IOException err) {
             System.err.println(err.getCause() + " : " + err.getMessage());
         }
     }

@@ -5,11 +5,9 @@ This program allow you to get the **alerts**, the **RAM**, the **CPU**, the **di
 ## Requirements
 
  * Java
- * MySQL (with a database named **PCC**)
 
 ## How to use it
 
-Take the artifact idc.jar in out/artifacts/
 To execute it just use this command line
 ```shell
   java -jar idc.jar
@@ -17,12 +15,16 @@ To execute it just use this command line
 
 *Command line options*
 
--c : will launch the program to add a PCC to the configuration
+**-c** : will launch the program to **add** a PCC to the configuration
 ```shell
   java -jar idc.jar -c
 ```
+**-r** : will launch the program to **remove** a PCC
+```shell
+  java -jar idc.jar -r
+```
 
--t N : will launch the program and change the number of VMs in the tops of the report (There will be N VM in the top)
+**-t** N : will launch the program and **change the number of VMs in the tops** of the report (There will be N VM in the top)
 ```shell
   java -jar idc.jar -t 22
 ```
