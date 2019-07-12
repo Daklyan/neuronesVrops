@@ -32,5 +32,4 @@ To execute it just use this command line
 ## TO DO
 
 * User interface
-* Delete PCC option
 * Backup of the database (for linux you can use [this](https://github.com/Daklyan/Rendu-stage))
